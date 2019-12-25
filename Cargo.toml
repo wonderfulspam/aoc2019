@@ -1,0 +1,7 @@
+[package]
+name = "AoC2019"
+version = "0.1.0"
+authors = ["Emil Thorenfeldt"]
+edition = "2018"
+
+[dependencies]
