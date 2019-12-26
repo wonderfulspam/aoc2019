@@ -1,5 +1,5 @@
-use std::collections::HashSet;
 use std::collections::HashMap;
+use std::collections::HashSet;
 
 const INPUT: &str = include_str!("../inputs/day3");
 
@@ -18,10 +18,7 @@ fn main() {
 }
 
 fn parse(input: &str) -> (HashSet<(i32, i32)>, HashMap<(i32, i32), i32>) {
-    let instructions: Vec<_> = input
-    .trim()
-    .split(',')
-    .collect();
+    let instructions: Vec<_> = input.trim().split(',').collect();
     let mut result: HashSet<(i32, i32)> = HashSet::new();
     let mut result_step: HashMap<(i32, i32), i32> = HashMap::new();
     let mut position = (0, 0);
@@ -34,7 +31,7 @@ fn parse(input: &str) -> (HashSet<(i32, i32)>, HashMap<(i32, i32), i32>) {
                 "L" => position.0 -= 1,
                 "U" => position.1 += 1,
                 "D" => position.1 -= 1,
-                _   => panic!("Unknown direction")
+                _ => panic!("Unknown direction"),
             }
             steps += 1;
             result.insert(position);

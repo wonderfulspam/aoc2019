@@ -17,10 +17,7 @@ fn main() {
 }
 
 fn parse(input: &str) -> HashSet<(i32, i32)> {
-    let instructions: Vec<_> = input
-    .trim()
-    .split(',')
-    .collect();
+    let instructions: Vec<_> = input.trim().split(',').collect();
     let mut result: HashSet<(i32, i32)> = HashSet::new();
     let mut position = (0, 0);
     for instruction in instructions.iter() {
@@ -31,7 +28,7 @@ fn parse(input: &str) -> HashSet<(i32, i32)> {
                 "L" => position.0 -= 1,
                 "U" => position.1 += 1,
                 "D" => position.1 -= 1,
-                _   => panic!("Unknown direction")
+                _ => panic!("Unknown direction"),
             }
             result.insert(position);
         }

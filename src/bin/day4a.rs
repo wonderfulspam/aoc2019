@@ -2,7 +2,9 @@ const MIN: i32 = 172930;
 const MAX: i32 = 683082;
 
 fn main() {
-    let valid_passwords = (MIN..MAX).filter(|i| test_password(i)).collect::<Vec<i32>>();
+    let valid_passwords = (MIN..MAX)
+        .filter(|i| test_password(i))
+        .collect::<Vec<i32>>();
     println!("{}", valid_passwords.len());
 }
 
@@ -14,7 +16,7 @@ fn test_password(password: &i32) -> bool {
         return false;
     }
     for i in 1..pw_string.len() {
-        if pw_string[i] < pw_string[i-1] {
+        if pw_string[i] < pw_string[i - 1] {
             return false;
         }
     }
